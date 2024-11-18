@@ -1,0 +1,60 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.flower {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.petal {
+    position: absolute;
+    width: 20px;
+    height: 50px;
+    background-color: lightblue;
+    border-radius: 20px 20px 0 0;
+    transform-origin: bottom center;
+    animation: bloom 2s forwards ease-in-out;
+}
+
+.petal:nth-child(1) { transform: rotate(0deg); }
+.petal:nth-child(2) { transform: rotate(72deg); }
+.petal:nth-child(3) { transform: rotate(144deg); }
+.petal:nth-child(4) { transform: rotate(216deg); }
+.petal:nth-child(5) { transform: rotate(288deg); }
+
+.center {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: darkblue;
+    border-radius: 50%;
+    top: 30px;
+    left: 30px;
+}
+
+.message {
+    margin-top: 20px;
+    font-size: 24px;
+    visibility: hidden;
+    animation: reveal 1s forwards ease-in-out 2s;
+}
+
+@keyframes bloom {
+    0% { transform: scaleY(0); }
+    100% { transform: scaleY(1); }
+}
+
+@keyframes reveal {
+    0% { visibility: hidden; }
+    100% { visibility: visible; }
+}
