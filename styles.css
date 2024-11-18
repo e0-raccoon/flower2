@@ -23,7 +23,7 @@ body {
     background-color: lightblue;
     border-radius: 20px 20px 0 0;
     transform-origin: bottom center;
-    animation: bloom 2s forwards ease-in-out;
+    animation: bloom 2s forwards ease-in-out, rotatePetal 2s forwards ease-in-out;
 }
 
 .petal:nth-child(1) { transform: rotate(0deg); }
@@ -50,8 +50,13 @@ body {
 }
 
 @keyframes bloom {
-    0% { transform: scaleY(0); }
-    100% { transform: scaleY(1); }
+    0% { height: 0; }
+    100% { height: 50px; }
+}
+
+@keyframes rotatePetal {
+    0% { transform: rotate(0deg) translateY(50px); }
+    100% { transform: rotate(360deg) translateY(50px); }
 }
 
 @keyframes reveal {
